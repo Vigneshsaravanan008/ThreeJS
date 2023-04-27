@@ -31,10 +31,13 @@ renderer.setSize(size.width, size.height); //800,600
 renderer.render(scene, camera);
 
 
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
 //resize
 window.addEventListener("resize", () => {
     size.width = window.innerWidth;
     size.height = window.innerHeight;
+
     //update camera
     camera.aspect = size.width / size.height;
     camera.updateProjectionMatrix();
